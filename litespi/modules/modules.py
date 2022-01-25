@@ -32,6 +32,31 @@ class MX25L12833F(SpiNorFlashModule):
     dummy_bits = 8
 
 
+class MX25L3233F(SpiNorFlashModule):
+    """MX25L3233F
+
+    Datasheet: https://www.macronix.com/Lists/Datasheet/Attachments/7958/MX25L3233F,%203V,%2032Mb,%20v1.7.pdf
+    """
+
+    manufacturer_id = SpiNorFlashManufacturerIDs.MACRONIX
+    device_id = 0x2016
+    name = "mx25l3233f"
+
+    total_size  =    4194304   # bytes
+    page_size   =        256   # bytes
+    total_pages =      16384
+
+    supported_opcodes = [
+        SpiNorFlashOpCodes.READ_1_1_1,
+        SpiNorFlashOpCodes.READ_1_1_1_FAST,
+        SpiNorFlashOpCodes.READ_1_1_2,
+        SpiNorFlashOpCodes.READ_1_1_4,
+        SpiNorFlashOpCodes.PP_1_1_1,
+        SpiNorFlashOpCodes.PP_1_4_4,
+    ]
+    dummy_bits = 8
+
+
 class MX25L6406E(SpiNorFlashModule):
     """MX25L6406E
 
